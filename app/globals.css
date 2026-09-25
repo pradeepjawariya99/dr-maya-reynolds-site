@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Theme: "Pacific dusk" ----------
+   Change these RGB triplets to re-theme the whole site. */
+:root {
+  --primary: 31 58 74;           /* deep Pacific  #1F3A4A */
+  --primary-soft: 46 84 106;     /* #2E546A */
+  --secondary: 169 207 200;      /* sea glass     #A9CFC8 */
+  --secondary-soft: 230 241 238; /* #E6F1EE */
+  --accent: 226 160 63;          /* low-sun amber #E2A03F */
+  --accent-hover: 237 179 90;    /* #EDB35A */
+  --ink: 20 38 47;               /* #14262F */
+  --paper: 248 251 250;          /* fog #F8FBFA */
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply bg-paper font-body text-ink antialiased; }
+  h1, h2, h3, h4 { @apply font-display font-normal text-primary; }
+  :focus-visible { @apply outline outline-2 outline-offset-4 outline-accent; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-5 md:px-8; }
+  .section-y { @apply py-16 md:py-24; }
+  .eyebrow { @apply mb-4 text-sm font-medium tracking-wide text-primary-soft; }
+  .lead { @apply max-w-prose text-lg leading-relaxed text-ink/80; }
+  .body-copy { @apply max-w-prose leading-relaxed text-ink/80; }
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-full bg-accent px-7 py-3 text-base font-medium text-ink transition-colors hover:bg-accent-hover;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-full border border-primary px-7 py-3 text-base font-medium text-primary transition-colors hover:bg-primary hover:text-paper;
+  }
+  /* Italic clause used for emphasis in headings, like the original template */
+  .em { @apply italic text-primary-soft; }
+}
