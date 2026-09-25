@@ -8,8 +8,7 @@ export const SITE = {
 };
 
 // TODO: the profile has no email/phone/booking link. Replace this with the real one.
-export const CONTACT_HREF = "Pradeepjawariya05@gmail.com";
-
+export const CONTACT_HREF = "mailto:Pradeepjawariya05@gmail.com";
 export const NAV = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
